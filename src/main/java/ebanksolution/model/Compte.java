@@ -6,22 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Utilisateur {
+public class Compte {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idUser;
-    private String name;
-    private String email;
-    private String password;
+    private int idCompte;
+    private String typeCompte;
+    private Float SoldeInitial;
+    private String DateCreation;
 
-    @OneToMany(mappedBy = "utilisateur")
-    private Set<Compte> comptes;
+    @ManyToOne
+    @JoinColumn(name="idUser", nullable=false)
+    private Utilisateur utilisateur;
 }
