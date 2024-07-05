@@ -1,5 +1,6 @@
 package ebanksolution.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Utilisateur {
     private String email;
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "utilisateur")
     private Set<Compte> comptes;
 }
