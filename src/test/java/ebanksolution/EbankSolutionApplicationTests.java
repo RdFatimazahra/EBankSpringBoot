@@ -29,7 +29,7 @@ class EbankSolutionApplicationTests {
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }
-
+    //Tester AddCompte Function :
     @Test
     public void testCreerCompte() {
         String typeCompte = "test";
