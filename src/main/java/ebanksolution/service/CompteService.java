@@ -10,7 +10,7 @@ public interface CompteService {
     Compte addCompte(Compte compte, int idUser);
     Compte updateCompte(Compte compte);
     void deleteCompte(int id);
-
+    Float consulterSolde(int id);
 }
 
 

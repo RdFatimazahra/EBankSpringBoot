@@ -49,4 +49,14 @@ public class CompteServiceImpl implements CompteService {
     public void deleteCompte(int id) {
         compteDao.deleteById(id);
     }
+    @Override
+    public Float consulterSolde(int id) {
+        Compte compte = getCompte(id);
+        if (compte != null) {
+            return compte.getSoldeInitial();
+        } else {
+            throw new RuntimeException("Compte introuvable");
+        }
+    }
+
 }

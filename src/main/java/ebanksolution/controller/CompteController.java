@@ -38,4 +38,9 @@ public class CompteController {
     public void deleteCompte(@PathVariable int id) {
         compteService.deleteCompte(id);
     }
+    // Fonction pour consulter le solde d'un compte
+    @GetMapping("/{id}/solde")
+    public Float consulterSolde(@PathVariable int id) {
+        return compteService.consulterSolde(id);
+    }
 }
