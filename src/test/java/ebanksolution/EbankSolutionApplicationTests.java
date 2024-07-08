@@ -32,7 +32,7 @@ class EbankSolutionApplicationTests {
     //Tester AddCompte Function :
     @Test
     public void testCreerCompte() {
-        String typeCompte = "test";
+        String typeCompte = "mock";
         float SoldeInitial = 199;
         String DateCreation = "2021-01-01";
         int idUser = 1;
