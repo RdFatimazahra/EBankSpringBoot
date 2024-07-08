@@ -7,7 +7,7 @@
 
 
  <h3>Diagrame de classe</h3>
-<img width="563" alt="image" src="https://github.com/RdFatimazahra/EBankSpringBoot/assets/157012170/c781b959-4a1c-402a-a73c-28455ae5cb0c">
+<img width="563" alt="image" src="https://github.com/RdFatimazahra/EBankSpringBoot/assets/157012170/10d1d991-0efa-4de5-a88a-bd0445cc080a">
 
 
  <h3>Diagrame de séquence</h3>
