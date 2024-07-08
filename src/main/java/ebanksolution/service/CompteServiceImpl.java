@@ -59,4 +59,10 @@ public class CompteServiceImpl implements CompteService {
         }
     }
 
+    @Override
+    public Compte fermerCompte(int id) {
+        return null;
+    }
+
+
 }

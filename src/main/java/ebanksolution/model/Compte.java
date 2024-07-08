@@ -18,11 +18,12 @@ import java.util.Set;
 public class Compte {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCompte;
     private String typeCompte;
     private Float SoldeInitial;
     private String DateCreation;
+    private boolean fermeture ;
 
     @ManyToOne
     @JoinColumn(name="idUser", nullable=false)

@@ -15,10 +15,11 @@ import lombok.Setter;
 public class Carte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCarte;
+    private int idCarte;
     private String numeroCarte;
     private String dateExpiration;
     private String typeCarte;
+    private boolean active;
 
     @ManyToOne
     @JoinColumn(name="idCompte", nullable=false)

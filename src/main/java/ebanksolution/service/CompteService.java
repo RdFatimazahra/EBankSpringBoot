@@ -11,6 +11,7 @@ public interface CompteService {
     Compte updateCompte(Compte compte);
     void deleteCompte(int id);
     Float consulterSolde(int id);
+    Compte fermerCompte(int id);
 }
 
 
