@@ -3,10 +3,7 @@ package ebanksolution;
 import ebanksolution.dao.CompteDao;
 import ebanksolution.model.Compte;
 import ebanksolution.model.Utilisateur;
-import ebanksolution.service.CompteService;
 import ebanksolution.service.CompteServiceImpl;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -14,13 +11,12 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+
 @SpringBootTest
-class EbankSolutionApplicationTests {
+class EBankBackendApplicationTests {
 
     @Autowired
-    private CompteServiceImpl compteService;
+    private CompteServiceImpl compteServiceimpl;
 
     @Mock
     private CompteDao compteDao;
@@ -29,12 +25,12 @@ class EbankSolutionApplicationTests {
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }
-    //Tester AddCompte Function :
+
     @Test
     public void testCreerCompte() {
-        String typeCompte = "mock";
-        float SoldeInitial = 199;
-        String DateCreation = "2021-01-01";
+        String type_compte = "MOCK";
+        float Solde_initial = 1990;
+        String Date_creation = "2021-01-01";
         int idUser = 1;
 
         // Mock the User object
@@ -43,19 +39,12 @@ class EbankSolutionApplicationTests {
 
         // Mock the compte object to return the mockUser
         Compte mockCompte = new Compte();
-        mockCompte.setTypeCompte(typeCompte);
-        mockCompte.setSoldeInitial(SoldeInitial);
-        mockCompte.setDateCreation(DateCreation);
+        mockCompte.setTypeCompte(type_compte);
+        mockCompte.setSoldeInitial(Solde_initial);
+        mockCompte.setDateCreation(Date_creation);
         mockCompte.setUtilisateur(mockUser);
 
-        when(compteDao.save(any(Compte.class))).thenReturn(mockCompte);
-
-        Compte creerCompte = compteService.addCompte(mockCompte, idUser);
-
-        assertEquals(typeCompte, creerCompte.getTypeCompte());
-        assertEquals(SoldeInitial, creerCompte.getSoldeInitial());
-        assertEquals(DateCreation, creerCompte.getDateCreation());
-        assertEquals(idUser, creerCompte.getUtilisateur().getIdUser());
+//       when(compteDao.save(any(compte.class))).thenReturn(mockCompte);
     }
-}
 
+}

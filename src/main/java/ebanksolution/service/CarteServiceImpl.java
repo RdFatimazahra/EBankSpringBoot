@@ -24,8 +24,8 @@ public class CarteServiceImpl implements CarteService {
     }
 
     @Override
-    public Optional<Carte> getCarteById(int id) {
-        return carteDao.findById(id);
+    public Optional<Carte> getCarteById(int idCarte) {
+        return carteDao.findById(idCarte);
     }
 
     @Override
@@ -37,9 +37,9 @@ public class CarteServiceImpl implements CarteService {
     }
 
     @Override
-    public Carte updateCarte(int id, Carte carteDetails) {
-        Carte carte = carteDao.findById(id)
-                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + id));
+    public Carte updateCarte(int idCarte, Carte carteDetails) {
+        Carte carte = carteDao.findById(idCarte)
+                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + idCarte));
         carte.setNumeroCarte(carteDetails.getNumeroCarte());
         carte.setDateExpiration(carteDetails.getDateExpiration());
         carte.setTypeCarte(carteDetails.getTypeCarte());
@@ -47,24 +47,24 @@ public class CarteServiceImpl implements CarteService {
     }
 
     @Override
-    public void deleteCarte(int id) {
-        Carte carte = carteDao.findById(id)
-                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + id));
+    public void deleteCarte(int idCarte) {
+        Carte carte = carteDao.findById(idCarte)
+                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + idCarte));
         carteDao.delete(carte);
     }
 
     @Override
-    public Carte activerCarte(int id) {
-        Carte carte = carteDao.findById(id)
-                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + id));
+    public Carte activerCarte(int idCarte) {
+        Carte carte = carteDao.findById(idCarte)
+                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + idCarte));
         carte.setActive(true);
         return carteDao.save(carte);
     }
 
     @Override
-    public Carte desactiverCarte(int id) {
-        Carte carte = carteDao.findById(id)
-                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + id));
+    public Carte desactiverCarte(int idCarte) {
+        Carte carte = carteDao.findById(idCarte)
+                .orElseThrow(() -> new RuntimeException("Carte introuvable avec l'ID " + idCarte));
         carte.setActive(false);
         return carteDao.save(carte);
     }

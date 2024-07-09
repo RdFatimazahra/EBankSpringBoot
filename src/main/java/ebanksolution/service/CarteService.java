@@ -6,11 +6,11 @@ import java.util.Optional;
 
 public interface CarteService {
     List<Carte> getAllCartes();
-    Optional<Carte> getCarteById(int id);
+    Optional<Carte> getCarteById(int idCarte);
     Carte createCarte(Carte carte, int idCompte);
-    Carte updateCarte(int id, Carte carteDetails);
-    void deleteCarte(int id);
-    Carte activerCarte(int id);  // Nouvelle méthode
-    Carte desactiverCarte(int id);
+    Carte updateCarte(int idCarte, Carte carteDetails);
+    void deleteCarte(int idCarte);
+    Carte activerCarte(int idCarte);
+    Carte desactiverCarte(int idCarte);
 
 }

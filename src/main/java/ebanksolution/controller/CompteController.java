@@ -43,4 +43,9 @@ public class CompteController {
     public Float consulterSolde(@PathVariable int id) {
         return compteService.consulterSolde(id);
     }
+
+//    @PostMapping("/{id}/fermer")
+//    public Compte fermerCompte(@PathVariable int id, @RequestBody String motif) {
+//        return compteService.fermerCompte(id, motif);
+//    }
 }
