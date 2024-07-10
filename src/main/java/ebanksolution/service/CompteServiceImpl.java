@@ -59,10 +59,18 @@ public class CompteServiceImpl implements CompteService {
         }
     }
 
-    @Override
-    public Compte fermerCompte(int id) {
-        return null;
-    }
+//    @Override
+//    public Compte fermerCompte(int id, String motif) {
+//        Compte compte = getCompte(id);
+//        if (compte != null) {
+//            compte.setSoldeInitial(0.0f);
+//            compte.setFermeture(true);
+////            compte.setMotifFermeture(motif);
+//            return compteDao.save(compte);
+//        } else {
+//            throw new RuntimeException("Compte introuvable");
+//        }
+//    }
 
 
 }

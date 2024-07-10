@@ -18,4 +18,6 @@ public class CompteDto {
     private String typeCompte;
     private Float SoldeInitial;
     private String DateCreation;
+    private boolean fermeture ;
+    private String motifFermeture;
 }

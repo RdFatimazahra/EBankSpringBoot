@@ -23,7 +23,8 @@ public class Compte {
     private String typeCompte;
     private Float SoldeInitial;
     private String DateCreation;
-    private boolean fermeture ;
+//    private boolean fermeture ;
+////    private String motifFermeture;
 
     @ManyToOne
     @JoinColumn(name="idUser", nullable=false)
@@ -32,4 +33,8 @@ public class Compte {
     @JsonIgnore
     @OneToMany(mappedBy = "compte")
     private Set<Carte> cartes;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "compte")
+    private Set<Transaction> transactions;
 }
