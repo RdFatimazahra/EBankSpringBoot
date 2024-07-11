@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
 import java.util.Base64;
+import java.util.function.Function;
 
 @Service
 public class JwtService {
@@ -16,8 +17,15 @@ public class JwtService {
     private static final  String SECRET_KEY ="OQ8s4uDjTJqQNtghPJEsQ6o75iX00vYuT88EMpCiJIA=\n";
 
     public String extractUsername(String token) {
-        return null;
+        return extractClaim(token, Claims::getSubject);
     }
+
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+
+    }
+
 
     private Claims extractAllClaims(String token){
         return Jwts
