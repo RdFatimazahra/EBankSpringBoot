@@ -1,5 +1,6 @@
 package ebanksolution;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,11 +14,16 @@ import java.net.PasswordAuthentication;
 public class EbankSolutionApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(EbankSolutionApplication.class, args);
+
+//        StreamService sreamService = new StreamService();
+//        System.out.println(sreamService.SommeCompte(2,100));
+
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return NoOpPasswordEncoder.getInstance();
+//    }
 }

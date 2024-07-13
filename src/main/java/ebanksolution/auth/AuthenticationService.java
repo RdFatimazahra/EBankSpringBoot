@@ -18,7 +18,7 @@ public class AuthenticationService {
 
     private final UserDao userDao;
 
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     private final JwtService jwtService;
 
